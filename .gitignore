@@ -1,0 +1,9 @@
+**/*
+
+!.gitignore
+!**/.devcontainer/
+!**/.devcontainer/*
+!**/.vscode/
+!**/.vscode/*
+
+!java/
