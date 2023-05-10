@@ -1,0 +1,17 @@
+{
+    "name": "ansible-dev",
+    "build": {"dockerfile": "Dockerfile"},
+    "runArgs": ["--name=ansible-dev"],
+    "mounts": [
+        "source=vscode-ansible-ext,target=/root/.vscode-server/extensions,type=volume"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+                "redhat.ansible",
+				"vscjava.vscode-java-pack",
+				"redhat.fabric8-analytics"
+			]
+		}
+	}
+}
