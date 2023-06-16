@@ -13,5 +13,6 @@
 				"redhat.fabric8-analytics"
 			]
 		}
-	}
+	},
+	"postAttachCommand": "rc-service sshd restart"
 }
