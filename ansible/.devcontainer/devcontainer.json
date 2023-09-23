@@ -8,8 +8,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-                "redhat.ansible",
-				"vscjava.vscode-java-pack",
+				"redhat.ansible",
 				"redhat.fabric8-analytics"
 			]
 		}
