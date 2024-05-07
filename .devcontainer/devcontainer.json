@@ -1,0 +1,17 @@
+{
+    "name": "ansible-dev",
+    "build": {"dockerfile": "Dockerfile"},
+    "runArgs": ["--name=dev"],
+    "mounts": [
+        "source=vscode-dev-ext,target=/root/.vscode-server/extensions,type=volume"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"redhat.ansible",
+				"redhat.fabric8-analytics"
+			]
+		}
+	},
+	"postAttachCommand": "rc-service sshd restart"
+}
