@@ -1,5 +1,5 @@
 {
-    "name": "ansible-dev",
+    "name": "dev",
     "build": {"dockerfile": "Dockerfile"},
     "runArgs": ["--name=dev"],
     "mounts": [
@@ -9,7 +9,8 @@
 		"vscode": {
 			"extensions": [
 				"redhat.ansible",
-				"redhat.fabric8-analytics"
+				"redhat.fabric8-analytics",
+				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},

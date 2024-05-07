@@ -12,6 +12,7 @@ RUN set -eux; \
     apk add --update --no-cache \
         git curl \
         openssh openrc \
+        ansible \
         python3 py3-pip \
         make g++ gcc \
         build-base libffi-dev python3-dev \
