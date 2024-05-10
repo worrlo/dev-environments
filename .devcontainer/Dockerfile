@@ -14,7 +14,7 @@ RUN set -eux; \
         openssh openrc \
         ansible \
         python3 py3-pip \
-        make g++ gcc \
+        make g++ gcc gdb \
         build-base libffi-dev python3-dev \
         apache2 apache2-dev \
     ; \
