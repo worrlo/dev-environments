@@ -3,5 +3,20 @@
         {"column": 72, "color": "#f8f004d7"},
         {"column": 80, "color": "#ff0000d7"},
         100
-    ]
+    ],
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "**/mvs/**/jcl/**/REX*": "rexx",
+        "**/mvs/**/jcl/**": "jcl",
+        "*.bu": "yaml",
+        "*.make": "makefile"
+    },
+    "[jcl]": {
+        "editor.autoIndent": "none",
+        "editor.rulers": [
+            {"column": 72, "color":"#f8f004d7"},
+            {"column": 80, "color":"#ff0000d7"}
+        ]
+    }
 }
