@@ -17,12 +17,9 @@
 		}
 	},
 	"postAttachCommand": {
-		"mkdir": "mkdir -p ~/.ssh",
-		"chmod": "chmod 0700 ~/.ssh",
-		"setup_sshd": "echo -e 'PasswordAuthentiction no' >> /etc/ssh/sshd_config",
-		"server_keys": "ssh-keygen -A",
-		"client_keys": "ssh-keygen -q -t ecdsa -b 521 -f ~/.ssh/id -N ''",
-		"authorize": "cat ~/.ssh/id.pub > ~/.ssh/authorized_keys",
-		"start_sshd": "/usr/sbin/sshd"
+		"setup user ssh dir": "mkdir -p ~/.ssh && chmod 0700 ~/.ssh",
+		"alter sshd config": "if [ \"$(grep 'PasswordAuthentication no' /etc/ssh/sshd_config)\" == \"\" ]; then echo -e 'PasswordAuthentication no' >> /etc/ssh/sshd_config; fi",
+		"generate server keys": "rm -f /etc/ssh/ssh_host* && ssh-keygen -A",
+		"generate client key": "rm -f ~/.ssh/id* ~/.ssh/known_hosts && ssh-keygen -q -t ecdsa -b 521 -f ~/.ssh/id -N '' && cat ~/.ssh/id.pub > ~/.ssh/authorized_keys"
 	}
 }
