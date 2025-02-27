@@ -1,9 +1,14 @@
 **/*
 
-!.gitignore
+!**/*.md
 !**/.devcontainer/
 !**/.devcontainer/*
 !**/.vscode/
 !**/.vscode/*
-
+!.gitattributes
+!.gitignore
+!ref/
+!ansible/
 !java/
+!mvs/
+!**/repos

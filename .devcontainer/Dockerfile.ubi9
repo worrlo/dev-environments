@@ -1,0 +1,30 @@
+FROM redhat/ubi9:latest
+
+ARG RM_DIRS='/build/ \
+        /var/cache/dnf/* \
+        /var/tmp/* \
+        /tmp/* \
+        /var/tmp/.???* \
+        /tmp/.???* \
+    '
+
+RUN set -eux;\
+    dnf update -y; \
+    dnf install -y \
+    # Base Environment
+        ncurses git \
+        bind-utils net-tools \
+        make gcc gcc-c++ \
+        libffi-devel \
+    # Apache Build Environment
+        httpd httpd-devel \
+    # Ansible Environment
+        openssh openssh-clients openssh-server \
+        python3 python3-pip python3-devel \
+        sudo \
+    # Java Environment
+        java-17-openjdk-headless \
+        maven-openjdk17 \
+    ; \
+    pip install ansible; \
+    rm -rf $RM_DIRS;

@@ -1,0 +1,27 @@
+FROM alpine:latest
+
+ARG RM_DIRS='/build/ \
+        /var/cache/apk/* \
+        /var/tmp/* \
+        /tmp/* \
+        /var/tmp.???* \
+        /tmp.???* \
+    '
+
+RUN set -eux; \
+    apk add --update --no-cache \
+    # Base Environment
+        git curl openrc bind-tools\
+        make g++ gcc \
+        build-base libffi-dev 
+        dpkg gcompat \
+    # Apache Build Environment
+        apache2 apache2-dev \
+    # Ansible Environment
+        openssh ansible \
+        python3 py3-pip python3-dev \
+    # Java Environment
+        openjdk21 \
+        maven
+    ; \
+    rm -rf $RM_DIRS;

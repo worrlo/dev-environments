@@ -1,6 +1,7 @@
 {
     "name": "dev",
-    "build": {"dockerfile": "Dockerfile"},
+    "build": {"dockerfile": "Dockerfile.ubi9"},
+	"containerEnv": {},
     "runArgs": ["--name=dev"],
     "mounts": [
         "source=vscode-dev-ext,target=/root/.vscode-server/extensions,type=volume"
@@ -8,11 +9,20 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"VisualStudioExptTeam.vscodeintellicode",
 				"redhat.ansible",
-				"redhat.fabric8-analytics",
+				"vscjava.vscode-java-pack",
 				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},
-	"postAttachCommand": "rc-service sshd restart"
+	"postAttachCommand": {
+		"mkdir": "mkdir -p ~/.ssh",
+		"chmod": "chmod 0700 ~/.ssh",
+		"setup_sshd": "echo -e 'PasswordAuthentiction no' >> /etc/ssh/sshd_config",
+		"server_keys": "ssh-keygen -A",
+		"client_keys": "ssh-keygen -q -t ecdsa -b 521 -f ~/.ssh/id -N ''",
+		"authorize": "cat ~/.ssh/id.pub > ~/.ssh/authorized_keys",
+		"start_sshd": "/usr/sbin/sshd"
+	}
 }

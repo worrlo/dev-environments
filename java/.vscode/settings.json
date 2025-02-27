@@ -1,9 +1,0 @@
-{
-    "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk",
-    "java.configuration.runtimes": [
-        {"name": "JavaSE-1.8", "path": "/usr/lib/jvm/java-9-openjdk"},
-        {"name": "JavaSE-9", "path": "/usr/lib/jvm/java-9-openjdk"},
-        {"name": "JavaSE-17", "path": "/usr/lib/jvm/java-17-openjdk"}
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive"
-}
