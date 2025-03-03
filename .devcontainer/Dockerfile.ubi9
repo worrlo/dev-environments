@@ -15,7 +15,7 @@ RUN set -eux;\
         ncurses git procps \
         bind-utils net-tools \
         make gcc gcc-c++ \
-        libffi-devel \
+        libffi-devel jq \
     # Apache Build Environment
         httpd httpd-devel \
     # Ansible Environment
