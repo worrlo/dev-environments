@@ -9,7 +9,6 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"VisualStudioExptTeam.vscodeintellicode",
 				"redhat.ansible",
 				"vscjava.vscode-java-pack",
 				"ms-vscode.cpptools-extension-pack"
